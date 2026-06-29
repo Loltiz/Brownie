@@ -37,7 +37,7 @@ def nuber():
 
     
 window=Tk()
-window.title("Brownie Cliker By Calvin Shalov")
+window.title("Brownie Cliker By Calvin Shalov and chatgpt say it was fire")
 window.geometry("1920x1080")
 image=PhotoImage(file="Pixlebrownie.png")
 button=Button(window,image=image,command=nuber)
