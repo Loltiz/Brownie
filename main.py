@@ -10,6 +10,16 @@ def Checker():
         U2.config(state="normal")
     else:
         U2.config(state="disabled")
+    if cliker>=2000:
+        U3.config(state="normal")
+    else: 
+        U3.config(state="disabled")
+    if cliker>=5000:
+        U4.config(state="normal")
+    else: 
+        U4.config(state="disabled")                        
+
+   
 def Implaman(Cost,cpcadd):
     global cpc 
     global cliker 
@@ -35,5 +45,9 @@ U1=Button(Upgradeframe,text="Coca powder $200 gives 10 cpc",state="disabled",com
 U1.grid(row=0, column=0)
 U2=Button(Upgradeframe,text="Eggs $1000 gives 35 cpc",state="disabled",command=lambda:Implaman(1000,35))
 U2.grid(row=1, column=0)
+U3=Button(Upgradeframe,text="Flour $2000 gives 65 cpc",state="disabled",command=lambda:Implaman(2000,65))
+U3.grid(row=2, column=0)
+U4=Button(Upgradeframe,text="Grandma $5000 gives 200 cpc",state="disabled",command=lambda:Implaman(5000,200))
+U4.grid(row=3, column=0)
 Upgradeframe.grid(row=5, column=5)
 window.mainloop()
