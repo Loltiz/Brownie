@@ -1,4 +1,5 @@
-from tkinter import Tk,Button,Label,Frame
+from tkinter import Tk,Button,Label,Frame,PhotoImage
+from playsound3 import playsound
 cliker=0
 cpc=1
 def Checker():
@@ -32,22 +33,26 @@ def nuber():
     cliker=cliker+cpc
     label.config(text=cliker)
     Checker()
+    playsound("yummy-3.mp3",block=False)
+
     
 window=Tk()
 window.title("Brownie Cliker By Calvin Shalov")
 window.geometry("1920x1080")
-button=Button(window,text="make a brownie",command=nuber)
-button.grid(row=0,column=0)
+image=PhotoImage(file="Pixlebrownie.png")
+button=Button(window,image=image,command=nuber)
+button.grid(row=0,column=1,sticky="nsew")
 label=Label(window,text="Click Count")
-label.grid(row=1,column=0)
+label.grid(row=1,column=1)
 Upgradeframe=Frame(window)
 U1=Button(Upgradeframe,text="Coca powder $200 gives 10 cpc",state="disabled",command=lambda:Implaman(200,10))
-U1.grid(row=0, column=0)
+U1.grid(row=0, column=1)
 U2=Button(Upgradeframe,text="Eggs $1000 gives 35 cpc",state="disabled",command=lambda:Implaman(1000,35))
-U2.grid(row=1, column=0)
+U2.grid(row=1, column=1)
 U3=Button(Upgradeframe,text="Flour $2000 gives 65 cpc",state="disabled",command=lambda:Implaman(2000,65))
-U3.grid(row=2, column=0)
+U3.grid(row=2, column=1)
 U4=Button(Upgradeframe,text="Grandma $5000 gives 200 cpc",state="disabled",command=lambda:Implaman(5000,200))
-U4.grid(row=3, column=0)
-Upgradeframe.grid(row=5, column=5)
+U4.grid(row=3, column=1)
+Upgradeframe.grid(row=5, column=0)
+window.grid_columnconfigure(1,weight=1)
 window.mainloop()
